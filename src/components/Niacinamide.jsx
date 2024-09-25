@@ -45,7 +45,7 @@ const Niacinamide = () => {
         <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#e27d60] font-light">
           Niacinamide
         </h1>
-        <p className="mt-2 text-3xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
+        <p className="mt-2 text-xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
           Vitamin B3 at its best—balances oil, refines pores, evens skin tone, and boosts barrier function for a smoother, clearer complexion suitable for all skin types.
         </p>
       </motion.div>

@@ -39,10 +39,10 @@ const Bakuchiol = () => {
         animate={{ x: isVisible ? "0vw" : "-10vw", opacity: isVisible ? 1 : 0 }} // Animate based on visibility
         transition={{ type: "spring", stiffness: 50, damping: 20 }} // Smooth transition
       >
-        <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#e27d60] font-light">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl text-[#e27d60] font-light">
         Bakuchiol
         </h1>
-        <p className="mt-2 text-3xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
+        <p className="mt-2 text-xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
         A plant-based gentle alternative to retinol—smooths fine lines, evens out skin texture, and enhances firmness without the sensitivity.
         </p>
       </motion.div>

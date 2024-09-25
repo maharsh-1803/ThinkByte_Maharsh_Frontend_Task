@@ -39,10 +39,10 @@ const AlphaArbutin = () => {
           animate={{ x: isVisible ? "0vw" : "-10vw", opacity: isVisible ? 1 : 0 }} // Animate based on visibility
           transition={{ type: "spring", stiffness: 50, damping: 20 }} // Smooth transition
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#e27d60] font-light">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl text-[#e27d60] font-light">
           Alpha Arbutin
           </h1>
-          <p className="mt-2 text-3xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
+          <p className="mt-2 text-xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
           Naturally sourced, it lightens dark spots, evens skin tone, and unveils a brighter, more radiant complexion.
           </p>
         </motion.div>

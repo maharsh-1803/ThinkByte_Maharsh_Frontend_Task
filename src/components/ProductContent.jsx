@@ -18,15 +18,15 @@ const ProductContent = () => {
     'Bakuchiol'
   ];
 
-  const radiusFar = 600;  // Start far away when elements are off-screen
-  const radiusNear = 160;  // Move closer when elements are in view
+  const radiusFar = 800;  // Increased far radius for elements to start even further away
+  const radiusNear = 200;  // Increased near radius for elements to come closer
   const angleStep = (2 * Math.PI) / ingredientNames.length; // Angle step for even distribution
 
   // Rotate elements as they move
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
   return (
-    <div className="flex justify-center items-center relative h-screen overflow-hidden">
+    <div className="flex justify-center items-center relative h-screen overflow-hidden bg-[#fef7ed]">
       {/* Product image in the center */}
       <motion.div
         className="relative z-10"
@@ -38,7 +38,7 @@ const ProductContent = () => {
         <motion.img
           src={image14}
           alt="Product"
-          className="w-full h-auto max-w-[400px] max-h-[500px] object-cover"
+          className="w-[80vw] h-auto max-w-[400px] max-h-[500px] object-cover" // Responsive width
         />
       </motion.div>
 
@@ -68,8 +68,8 @@ const ProductContent = () => {
           const y = useTransform(currentRadius, r => r * Math.cos(angle));
 
           // Adjust the scale or opacity based on distance from center
-          const elementScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]); // Slightly shrink as they move closer
-          const elementOpacity = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]); // Opacity fades in
+          const elementScale = useTransform(scrollYProgress, [0, 1], [1.2, 0.9]); // Higher scale when they come closer
+          const elementOpacity = useTransform(scrollYProgress, [0, 1], [0.6, 1]); // Opacity fades in
 
           return (
             <motion.div
@@ -82,7 +82,7 @@ const ProductContent = () => {
               }}
             >
               <motion.div
-                className="flex justify-center items-center w-32 h-32 bg-orange-400 rounded-full text-center text-white font-bold"
+                className="flex justify-center items-center w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-b from-[#e27d60] to-[#c89a87] rounded-full text-center text-white font-bold"
                 style={{
                   scale: elementScale,
                   opacity: elementOpacity,

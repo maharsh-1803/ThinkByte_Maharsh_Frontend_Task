@@ -41,7 +41,7 @@ const SodiumAscorbylPhosphate = () => {
         <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#e27d60] font-light">
           Sodium Ascorbyl Phosphate
         </h1>
-        <p className="mt-2 text-3xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
+        <p className="mt-2 text-xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
           A stable, gentle Vitamin C that brightens skin, boosts collagen, and protects against free radical damage—perfect for a radiant, healthy glow.
         </p>
       </motion.div>

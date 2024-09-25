@@ -42,7 +42,7 @@ const TrenaxamicAcid = () => {
         <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#e27d60] font-light">
         Trenaxamic Acid
         </h1>
-        <p className="mt-2 text-3xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
+        <p className="mt-2 text-xl md:text-4xl lg:text-5xl text-gray-500 font-extralight">
         Dark spot defense—fades discoloration and reveals a more even complexion.
         </p>
       </motion.div>
