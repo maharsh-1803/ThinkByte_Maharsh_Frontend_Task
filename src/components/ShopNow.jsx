@@ -7,9 +7,8 @@ const ShopNow = () => {
         <img
           src={image13}
           alt="Shop Now"
-          className="w-full h-full object-cover rounded-[2rem]" // Use h-full to maintain aspect ratio
+          className="w-full h-full object-cover rounded-[2rem]" 
         />
-        {/* Light grey overlay */}
         <div className="absolute inset-0 bg-gray-700 opacity-20 z-10 rounded-[2rem]"></div>
         <div className="absolute inset-0 flex flex-col items-start justify-end px-6 sm:px-8 pb-8 text-left z-20">
           <h1 className="font-human-sans text-white text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 leading-tight">

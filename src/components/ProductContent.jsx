@@ -1,10 +1,9 @@
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import image14 from '../assets/iira-hero4.png'; // Adjust the image path as necessary
+import image14 from '../assets/iira-hero4.png'; 
 
 const ProductContent = () => {
-  const { scrollYProgress } = useViewportScroll(); // Track scroll progress
+  const { scrollYProgress } = useViewportScroll(); 
 
-  // Scale of the central image on scroll
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2]);
 
   const ingredientNames = [
@@ -18,16 +17,14 @@ const ProductContent = () => {
     'Bakuchiol'
   ];
 
-  const radiusFar = 800;  // Increased far radius for elements to start even further away
-  const radiusNear = 200;  // Increased near radius for elements to come closer
-  const angleStep = (2 * Math.PI) / ingredientNames.length; // Angle step for even distribution
+  const radiusFar = 800;
+  const radiusNear = 200;  
+  const angleStep = (2 * Math.PI) / ingredientNames.length; 
 
-  // Rotate elements as they move
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
   return (
     <div className="flex justify-center items-center relative h-screen overflow-hidden bg-[#fef7ed]">
-      {/* Product image in the center */}
       <motion.div
         className="relative z-10"
         initial={{ opacity: 0, scale: 0.5 }}
@@ -38,17 +35,16 @@ const ProductContent = () => {
         <motion.img
           src={image14}
           alt="Product"
-          className="w-[80vw] h-auto max-w-[400px] max-h-[500px] object-cover" // Responsive width
+          className="w-[80vw] h-auto max-w-[400px] max-h-[500px] object-cover" 
         />
       </motion.div>
 
-      {/* Circular layout for components */}
       <motion.div
         className="relative flex justify-center items-center"
         style={{ zIndex: 2 }}
         animate={{
-          scale: scale, // Apply the scroll-based scaling
-          rotate: rotate, // Apply rotation as elements move
+          scale: scale, 
+          rotate: rotate,
         }}
         transition={{
           type: 'spring',
@@ -60,16 +56,13 @@ const ProductContent = () => {
         {ingredientNames.map((name, index) => {
           const angle = index * angleStep;
 
-          // Calculate the current radius based on scroll progress
           const currentRadius = useTransform(scrollYProgress, [0, 1], [radiusNear, radiusFar]);
 
-          // Calculate the x and y positions in a circular fashion
           const x = useTransform(currentRadius, r => r * Math.sin(angle));
           const y = useTransform(currentRadius, r => r * Math.cos(angle));
 
-          // Adjust the scale or opacity based on distance from center
-          const elementScale = useTransform(scrollYProgress, [0, 1], [1.2, 0.9]); // Higher scale when they come closer
-          const elementOpacity = useTransform(scrollYProgress, [0, 1], [0.6, 1]); // Opacity fades in
+          const elementScale = useTransform(scrollYProgress, [0, 1], [1.2, 0.9]); 
+          const elementOpacity = useTransform(scrollYProgress, [0, 1], [0.6, 1]); 
 
           return (
             <motion.div

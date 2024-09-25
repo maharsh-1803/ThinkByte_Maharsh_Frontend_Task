@@ -8,13 +8,13 @@ import image5 from "../assets/111_264x342.png";
 
 const OurStory = () => {
   const cardVariants = {
-    hover: { scale: 0.6, transition: { duration: 0.3 } }, // Shrinks on hover
+    hover: { scale: 0.6, transition: { duration: 0.3 } }, 
   };
 
-  // State to hold the hover state and mouse position
+  
   const [hoverData, setHoverData] = useState({ hover: false, x: 0, y: 0, content1: "", content2: "", image: "" });
 
-  // Function to handle hover and mouse movement
+  
   const handleMouseMove = (e, content1, content2, image) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -28,7 +28,6 @@ const OurStory = () => {
 
   return (
     <div className="bg-[#fef7ed] p-8 relative">
-      {/* Title */}
       <h1 className="text-center text-[#e27d60] text-4xl font-bold mb-4">
         OUR STORY & MISSION
       </h1>
@@ -38,9 +37,7 @@ const OurStory = () => {
         solutions, and bring ideas to life.
       </p>
 
-      {/* Cards Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 mx-auto max-w-7xl">
-        {/* Inspiration Card */}
         <motion.div
           className="text-center p-4 relative"
           onMouseMove={(e) => handleMouseMove(e, "A New Chapter Begins", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatibus maiores perferendis. At quod voluptatum doloribus odio fugit pariatur, quas veritatis dicta ullam iusto beatae quisquam asperiores laboriosam ut aliquam", image1)}
@@ -54,12 +51,11 @@ const OurStory = () => {
               variants={cardVariants}
               src={image1}
               alt="Inspiration"
-              className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" // Added border here
+              className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" 
             />
 
         </motion.div>
 
-        {/* Innovation Card */}
         <motion.div
     className="text-center p-4 relative"
     onMouseMove={(e) => handleMouseMove(e, "Creating the perfect Blend", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatibus maiores perferendis. At quod voluptatum doloribus odio fugit pariatur, quas veritatis dicta ullam iusto beatae quisquam asperiores laboriosam ut aliquam", image2)}
@@ -73,11 +69,10 @@ const OurStory = () => {
       variants={cardVariants}
       src={image2}
       alt="Innovation"
-      className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" // Added border here
+      className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" 
     />
   </motion.div>
 
-        {/* Realization Card */}
         <motion.div
           className="text-center p-4 relative"
           onMouseMove={(e) => handleMouseMove(e, "A Breakthrough", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatibus maiores perferendis. At quod voluptatum doloribus odio fugit pariatur, quas veritatis dicta ullam iusto beatae quisquam asperiores laboriosam ut aliquam", image3)}
@@ -91,14 +86,12 @@ const OurStory = () => {
               variants={cardVariants}
               src={image3}
               alt="Inspiration"
-              className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" // Added border here
+              className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" 
             />
         </motion.div>
       </div>
 
-      {/* New Row - Launch Preparation and Going Public */}
       <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-7xl">
-        {/* Launch Preparation Card */}
         <motion.div
           className="text-center p-4 relative"
           onMouseMove={(e) => handleMouseMove(e, "Preparing to share with the world", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatibus maiores perferendis. At quod voluptatum doloribus odio fugit pariatur, quas veritatis dicta ullam iusto beatae quisquam asperiores laboriosam ut aliquam", image4)}
@@ -112,11 +105,10 @@ const OurStory = () => {
               variants={cardVariants}
               src={image4}
               alt="Launch Preparation"
-              className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" // Added border here
+              className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" 
             />
         </motion.div>
 
-        {/* Going Public Card */}
         <motion.div
           className="text-center p-4 relative"
           onMouseMove={(e) => handleMouseMove(e, "IIRA Comes to life", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatibus maiores perferendis. At quod voluptatum doloribus odio fugit pariatur, quas veritatis dicta ullam iusto beatae quisquam asperiores laboriosam ut aliquam", image5)}
@@ -130,26 +122,25 @@ const OurStory = () => {
               variants={cardVariants}
               src={image5}
               alt="Going Public"
-              className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" // Added border here
+              className="rounded-b-full object-cover mb-2 mx-auto border-2 border-[#e27d60] p-3" 
             />
         </motion.div>
       </div>
 
-      {/* Popup that follows the cursor */}
       {hoverData.hover && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }} // Initial scale for smooth entry
-          animate={{ opacity: 1, scale: 1 }} // Scale to normal size on entry
-          exit={{ opacity: 0, scale: 0.8 }} // Scale down on exit
-          transition={{ duration: 0.3 }} // Smooth transition duration
+          initial={{ opacity: 0, scale: 0.8 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          exit={{ opacity: 0, scale: 0.8 }} 
+          transition={{ duration: 0.3 }} 
           style={{
             position: "absolute",
             top: `${hoverData.y + 200}px`,
             left: `${hoverData.x + 200}px`,
             pointerEvents: "none",
-            background: "linear-gradient(135deg, rgba(255, 225, 187, 0.9), rgba(250, 237, 218, 0.9))", // Gradient background
+            background: "linear-gradient(135deg, rgba(255, 225, 187, 0.9), rgba(250, 237, 218, 0.9))", 
             color: "#000",
-            padding: "16px", // Increased padding for better appearance
+            padding: "16px", 
             borderRadius: "8px",
             zIndex: 10,
             display: 'flex',  

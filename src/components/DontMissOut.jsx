@@ -13,7 +13,7 @@ const DontMissOut = () => {
             type="email"
             placeholder="Email"
             className="px-4 py-2 border placeholder-white border-white bg-transparent rounded-l-lg focus:outline-none focus:ring-2"
-            style={{ borderWidth: "2px" }} // Setting the border width to 2px
+            style={{ borderWidth: "2px" }} 
           />
           <button className="px-6 py-2 border-2 border-white text-white font-semibold rounded-r-lg bg-transparent">
             →

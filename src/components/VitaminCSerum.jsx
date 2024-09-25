@@ -6,7 +6,6 @@ import image2 from "../assets/12_2.png";
 import image3 from '../assets/12_3.png';
 
 const VitaminCSerum = () => {
-  // Custom hook to control animation for each section
   const useSectionAnimation = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.2 });
@@ -22,20 +21,18 @@ const VitaminCSerum = () => {
     return { ref, controls };
   };
 
-  // Motion variants for the animation
+  
   const variants = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
   };
 
-  // Using custom hook for each section
   const section1 = useSectionAnimation();
   const section2 = useSectionAnimation();
   const section3 = useSectionAnimation();
 
   return (
     <div className="p-10 bg-[#FFF5EB] font-sans">
-      {/* Heading Section */}
       <motion.h1
         initial="hidden"
         animate={section1.controls}
@@ -46,7 +43,6 @@ const VitaminCSerum = () => {
         Why Choose Our Vitamin C Serum
       </motion.h1>
 
-      {/* Description Section */}
       <motion.p
         initial="hidden"
         animate={section1.controls}
@@ -67,7 +63,6 @@ const VitaminCSerum = () => {
         skincare experience where every drop nurtures, protects, and revitalizes.
       </motion.p>
 
-      {/* Section 1: Image and Benefits */}
       <motion.div
         initial="hidden"
         animate={section1.controls}
@@ -83,7 +78,7 @@ const VitaminCSerum = () => {
         className="flex gap-5 mt-10 ml-5 mr-5"
       >
         <motion.img
-          src={image1} // replace with your image path
+          src={image1} 
           alt="Vitamin C Serum"
           className="w-[145rem] h-auto rounded-xl"
           initial={{ scale: 0.9, opacity: 0 }}
@@ -127,7 +122,6 @@ const VitaminCSerum = () => {
         </div>
       </motion.div>
 
-      {/* Section 2: Image on Right and Text on Left */}
       <motion.div
         initial="hidden"
         animate={section2.controls}
@@ -179,7 +173,7 @@ const VitaminCSerum = () => {
           </motion.div>
         </div>
         <motion.img
-          src={image2} // replace with your image path
+          src={image2} 
           alt="Vitamin C Serum"
           className="w-[145rem] h-auto rounded-xl"
           initial={{ scale: 0.9, opacity: 0 }}
@@ -188,7 +182,6 @@ const VitaminCSerum = () => {
         />
       </motion.div>
 
-      {/* Section 3: Image and Benefits */}
       <motion.div
         initial="hidden"
         animate={section3.controls}
@@ -204,7 +197,7 @@ const VitaminCSerum = () => {
         className="flex gap-5 mt-10 ml-5 mr-5"
       >
         <motion.img
-          src={image3} // replace with your image path
+          src={image3} 
           alt="Vitamin C Serum"
           className="w-[145rem] h-auto rounded-xl"
           initial={{ scale: 0.9, opacity: 0 }}

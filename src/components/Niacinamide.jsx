@@ -23,7 +23,7 @@ const Niacinamide = () => {
       id="niacinamide"
       className="flex items-center justify-between p-8 bg-[#fef7ed] h-screen"
     >
-      {/* Circle Element */}
+
       <motion.div
       className="w-56 h-56 rounded-full bg-gradient-to-br from-[#e27d60] to-[#f0a07e] flex items-center justify-center"
       initial={{ x: "50vw", y: "-10vh", opacity: 0 }}
@@ -35,12 +35,11 @@ const Niacinamide = () => {
       </span>
     </motion.div>
 
-      {/* Text with animation */}
       <motion.div
         className="w-[75vw] px-4 overflow-hidden"
-        initial={{ x: '100vw', opacity: 0 }} // Starting position and opacity
-        animate={{ x: isVisible ? '0vw' : '-10vw', opacity: isVisible ? 1 : 0 }} // Animate based on visibility
-        transition={{ type: 'spring', stiffness: 50, damping: 20 }} // Smooth transition
+        initial={{ x: '100vw', opacity: 0 }} 
+        animate={{ x: isVisible ? '0vw' : '-10vw', opacity: isVisible ? 1 : 0 }} 
+        transition={{ type: 'spring', stiffness: 50, damping: 20 }} 
       >
         <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#e27d60] font-light">
           Niacinamide

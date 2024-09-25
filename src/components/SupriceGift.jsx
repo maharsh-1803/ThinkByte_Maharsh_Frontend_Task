@@ -1,14 +1,12 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import image1 from '../assets/SupriceGift.png'; // Make sure the image path is correct
+import image1 from '../assets/SupriceGift.png'; 
 
 const SupriceGift = () => {
-  // Control for animations
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.2 });
 
-  // Trigger animations when in view
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -17,34 +15,31 @@ const SupriceGift = () => {
     }
   }, [controls, inView]);
 
-  // Animation variants for the text and image
   const textVariants = {
-    hidden: { opacity: 1, y: "0vh" }, // Start centered
-    visible: { opacity: 1, y: "-43vh", transition: { duration: 1 } }, // Move up
+    hidden: { opacity: 1, y: "0vh" }, 
+    visible: { opacity: 1, y: "-43vh", transition: { duration: 1 } }, 
   };
 
   const imageVariants = {
-    hidden: { scale: 1 }, // Start at full size
-    visible: { scale: 0.9, transition: { duration: 1 } }, // Scale down
+    hidden: { scale: 1 }, 
+    visible: { scale: 0.9, transition: { duration: 1 } }, 
   };
 
   return (
     <div ref={ref} className="relative flex items-center justify-center h-screen overflow-hidden">
-      {/* Text in the center */}
       <motion.p
         initial="hidden"
         animate={controls}
         variants={textVariants}
-        className="absolute text-5xl font-bold z-10 text-yellow-700" // Absolute positioning to overlay on image
+        className="absolute text-5xl font-bold z-10 text-yellow-700" 
       >
         Surprise Gift
       </motion.p>
-      
-      {/* Image with motion */}
+    
       <motion.img
         src={image1}
         alt="Surprise Gift"
-        className="object-cover w-[85vw] h-[85vh] rounded-[2rem]" // Ensure the image takes up 85% of the screen
+        className="object-cover w-[85vw] h-[85vh] rounded-[2rem]" 
         initial="hidden"
         animate={controls}
         variants={imageVariants}
